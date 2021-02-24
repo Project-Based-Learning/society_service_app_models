@@ -1,0 +1,1 @@
+# society_service_app_models
