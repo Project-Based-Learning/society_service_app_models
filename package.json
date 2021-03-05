@@ -1,0 +1,23 @@
+{
+  "name": "society_service_app_models",
+  "version": "1.0.0",
+  "description": "Society Services Models",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Project-Based-Learning/society_service_app_models.git"
+  },
+  "author": "Rosemary18",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Project-Based-Learning/society_service_app_models/issues"
+  },
+  "homepage": "https://github.com/Project-Based-Learning/society_service_app_models#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "mongoose": "^5.11.18"
+  }
+}
