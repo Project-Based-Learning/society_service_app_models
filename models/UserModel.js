@@ -6,7 +6,8 @@ const USERS = new Schema({
     identity_id: {
         type: Schema.Types.ObjectId,
         ref: 'identity_model'
-    }
+    },
+    
 })
 
 module.exports = mongoose.model('user_model', USERS)
