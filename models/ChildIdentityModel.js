@@ -10,8 +10,14 @@ const CHILD_IDENTITY = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'identity_group_model'
     },
-    dateModified: {type: Date, default: Date.now()},
-    dateCreated: {type: Date, default: Date.now()},
+    dateModified: {
+        type: Date, 
+        default: Date.now()
+    },
+    dateCreated: {
+        type: Date, 
+        default: Date.now()
+    },
 })
 
 module.exports = mongoose.model('child_identity_model', CHILD_IDENTITY)

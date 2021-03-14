@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema();
 
 const PASSPORT = new Schema({
-    identity_id: {
+    identityId: {
         type: Schema.Types.ObjectId,
         ref: 'identity_model'
     },
