@@ -9,6 +9,10 @@ const SUBMISSION_TYPE = new Schema({
     submissionCode: {
         type: Number
     },
+    submissionDescription: {
+        type: String,
+        default: ''
+    },
     dateModified: {
         type: Date, 
         default: Date.now()

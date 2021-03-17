@@ -6,6 +6,10 @@ const SUBMISSION = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'identity_model'
     },
+    departmentId: {
+        type: Schema.Types.ObjectId,
+        ref: 'department_model'
+    },
     submissionTypeCode: {
         type: Number
     },

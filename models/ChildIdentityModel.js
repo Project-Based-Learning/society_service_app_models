@@ -2,13 +2,37 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema();
 
 const CHILD_IDENTITY = new Schema({
-    filed_by: {
+    firstName: {
+        type: String, 
+        default: ''
+    },
+    middleName: {
+        type: String, 
+        default: ''
+    },
+    lastName: {
+        type: String, 
+        default: ''
+    },
+    profileImage: {
+        type: String,
+        default: ''
+    },
+    filedBy: {
         type: Schema.Types.ObjectId,
         ref: 'identity_model'
     },
-    identity_group_id: {
+    identityGroupId: {
         type: Schema.Types.ObjectId,
         ref: 'identity_group_model'
+    },
+    deedOfBirthId: {
+        type: Schema.Types.ObjectId,
+        ref: 'deedofbirth_model'
+    },
+    approvedById: {
+        type: Schema.Types.ObjectId,
+        ref: 'department_model'
     },
     dateModified: {
         type: Date, 

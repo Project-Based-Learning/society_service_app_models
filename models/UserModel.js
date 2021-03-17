@@ -3,6 +3,11 @@ const bcrypt = require('bcrypt-nodejs');
 const Schema = mongoose.Schema();
 
 const USER = new Schema({
+    userId: {
+        type: String,
+        get: v => 'USR' + v,
+        get: v => 'USR' + v,
+    },
     identityId: {
         type: Schema.Types.ObjectId,
         ref: 'identity_model'

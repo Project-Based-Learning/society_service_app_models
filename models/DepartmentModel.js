@@ -3,39 +3,39 @@ const bcrypt = require('bcrypt-nodejs');
 const Schema = mongoose.Schema();
 
 const DEPARTMENT = new Schema({
-    department_name: {
+    departmentName: {
         type: String,
         default: ''
     },
-    department_level: {
+    departmentLevel: {
         type: Number,
     },
-    department_address: {
+    departmentAddress: {
         type: String,
         default: ''
     },
-    department_province_code: {
+    departmentProvinceCode: {
         type: Number
     },
-    department_city_code: {
+    departmentCityCode: {
         type: Number
     },
-    department_sub_district_code: {
+    departmentSubDistrictCode: {
         type: Number
     },
-    department_kelurahan_code: {
+    departmentKelurahanCode: {
         type: Number
     },
-    department_village_code: {
+    departmentVillageCode: {
         type: Number
     },
-    department_admin_users: [
+    departmentAdminUsers: [
         {
             type: Schema.Types.ObjectId,
             ref: 'admin_model'
         }
     ],
-    submission_type_code: {
+    submissionTypeCode: {
         type: Number
     },
     creator_id: {
