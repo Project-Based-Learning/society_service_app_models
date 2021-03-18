@@ -1,18 +1,10 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema();
+const {Schema} = mongoose;
 
 const DRIVE_LICENSE_TYPE = new Schema({
-    driveLicenseId: {
-        type: Number
-    },
-    driveLicenseName: {
-        type: String,
-        default: ''
-    },
-    driveLicenseDescription: {
-        type: String,
-        default: ''
-    },
+    id: String,
+    driveLicenseName: String,
+    driveLicenseDescription: String,
     dateModified: {type: Date, default: Date.now()},
     dateCreated: {type: Date, default: Date.now()},
 })

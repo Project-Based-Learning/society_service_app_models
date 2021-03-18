@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema();
+const {Schema} = mongoose;
 
 const DEED_OF_BIRTH = new Schema({
     filedBy: {

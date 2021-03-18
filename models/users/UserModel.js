@@ -1,24 +1,15 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
-const Schema = mongoose.Schema();
+const {Schema} = mongoose;
 
 const USER = new Schema({
-    userId: {
-        type: String,
-        get: v => 'USR' + v,
-        get: v => 'USR' + v,
-    },
-    identityId: {
-        type: Schema.Types.ObjectId,
-        ref: 'identity_model'
-    },
-    userEmail: {
-        type: String,
-        default: ''
-    },
+    id: String,
+    identityId: String,
+    userEmail: String,
     userPassword: {
         type: String,
-        default: ''
+        get: generateHash,
+        set: generateHash
     },
     dateModified: {
         type: Date, 
@@ -31,7 +22,7 @@ const USER = new Schema({
 })
 
 // generating a hash
-schema.methods.generateHash = password => {
+function generateHash(password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 };
   
@@ -40,4 +31,4 @@ schema.methods.validPassword = password => {
     return bcrypt.compareSync(password, this.password);
 };
 
-module.exports = mongoose.model('user_model', USER)
+module.exports = mongoose.model('doc_user', USER)

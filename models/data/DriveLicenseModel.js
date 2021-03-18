@@ -1,14 +1,11 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema();
+const {Schema} = mongoose;
 
 const DRIVE_LICENSE = new Schema({
-    identityId: {
-        type: Schema.Types.ObjectId,
-        ref: 'identity_model'
-    },
-    driveLicenseType: {
-        type: Number
-    },
+    id: String,
+    identityId: String,
+    driveLicenseType: String,
+    validUntil: Date,
     dateModified: {type: Date, default: Date.now()},
     dateCreated: {type: Date, default: Date.now()},
 })
