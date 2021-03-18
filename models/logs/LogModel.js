@@ -7,10 +7,6 @@ const LOG = new Schema({
     country: String,
     HTTPRequestType: String,
     EndpointAccess: String,
-    dateModified: {
-        type: Date, 
-        default: Date.now()
-    },
     dateCreated: {
         type: Date, 
         default: Date.now()

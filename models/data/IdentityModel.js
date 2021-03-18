@@ -8,6 +8,8 @@ const IDENTITY = new Schema({
         middleName: String,
         lastName: String,
     },
+    sex: Number,
+    nationality: String,
     address: String,
     addressDetail: {
         addressProvince: Number,
@@ -23,7 +25,7 @@ const IDENTITY = new Schema({
     bloodType: String,
     maritalStatus: Boolean,
     profession: String,
-    contact: {
+    contacts: {
         phone: String,
         mobile: String,
         email: String
@@ -34,6 +36,7 @@ const IDENTITY = new Schema({
         identityGroupId: String,
         driveLicenseId: String,
     },
+    isentityStatus: Number,
     documents: [
         {
             type: Schema.Types.ObjectId,

@@ -12,6 +12,7 @@ const SUBMISSION = new Schema({
     },
     submissionProgress: Number,
     submissionStatus: Boolean,
+    note: String,
     dateModified: {
         type: Date, 
         default: Date.now()
