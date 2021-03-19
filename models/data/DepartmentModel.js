@@ -28,4 +28,4 @@ const DEPARTMENT = new Schema({
 })
 
 
-module.exports = mongoose.model('department_model', DEPARTMENT)
+module.exports = mongoose.model('doc_department', DEPARTMENT)

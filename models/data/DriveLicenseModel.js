@@ -18,4 +18,4 @@ const DRIVE_LICENSE = new Schema({
     },
 })
 
-module.exports = mongoose.model('drive_license_model', DRIVE_LICENSE)
+module.exports = mongoose.model('doc_drive_license', DRIVE_LICENSE)

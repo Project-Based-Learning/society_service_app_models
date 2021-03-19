@@ -24,4 +24,4 @@ const CHILD_IDENTITY = new Schema({
     },
 })
 
-module.exports = mongoose.model('child_identity_model', CHILD_IDENTITY)
+module.exports = mongoose.model('doc_child_identity', CHILD_IDENTITY)

@@ -31,4 +31,4 @@ USER.methods.validPassword = password => {
     return bcrypt.compareSync(password, this.password);
 };
 
-module.exports = mongoose.model('doc_user', USER)
+module.exports = mongoose.model('doc_users', USER)

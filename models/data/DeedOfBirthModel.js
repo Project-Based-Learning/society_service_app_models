@@ -26,4 +26,4 @@ const DEED_OF_BIRTH = new Schema({
     },
 })
 
-module.exports = mongoose.model('deedofbirth_model', DEED_OF_BIRTH)
+module.exports = mongoose.model('doc_deedofbirth', DEED_OF_BIRTH)

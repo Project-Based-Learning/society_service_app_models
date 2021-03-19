@@ -36,13 +36,16 @@ const IDENTITY = new Schema({
         identityGroupId: String,
         driveLicenseId: String,
     },
-    isentityStatus: Number,
+    identityStatus: Number,
     documents: [
         {
             type: Schema.Types.ObjectId,
             ref: 'doc_document'
         }
     ],
+    submisionId: String,
+
+
     departmentApproverId: String,
     dateModified: {
         type: Date, 

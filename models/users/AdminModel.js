@@ -7,7 +7,11 @@ const ADMIN = new Schema({
     identityId: String,
     adminEmail: String,
     adminUsername: String,
-    adminPassword: String,
+    adminPassword: {
+        type: String,
+        get: generateHash,
+        set: generateHash
+    },
     adminGrantLevel: {
         type: Number,
         default: 1
@@ -34,7 +38,7 @@ const ADMIN = new Schema({
 
 
 // generating a hash
-ADMIN.methods.generateHash = password => {
+function generateHash(password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 };
   
@@ -43,4 +47,4 @@ ADMIN.methods.validPassword = password => {
     return bcrypt.compareSync(password, this.password);
 };
 
-module.exports = mongoose.model('doc_admin', ADMIN)
+module.exports = mongoose.model('doc_admins', ADMIN)

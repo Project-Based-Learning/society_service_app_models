@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
-const DRIVE_LICENSE_TYPE = new Schema({
+const IMAGE = new Schema({
     id: String,
-    driveLicenseName: String,
-    driveLicenseDescription: String,
+    identityId: String,
+    link: String,
+    ext: String,
+    imageDescription: String,
     dateModified: {
         type: Date, 
         default: Date.now()
@@ -15,4 +17,4 @@ const DRIVE_LICENSE_TYPE = new Schema({
     },
 })
 
-module.exports = mongoose.model('drive_license_type_model', DRIVE_LICENSE_TYPE)
+module.exports = mongoose.model('doc_image', IMAGE)

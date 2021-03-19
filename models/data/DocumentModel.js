@@ -4,7 +4,9 @@ const {Schema} = mongoose;
 const DOCUMENT = new Schema({
     id: String,
     identityId: String,
+    submissionId: String,
     link: String,
+    ext: String,
     documentDescription: String,
     dateModified: {
         type: Date, 
@@ -16,4 +18,4 @@ const DOCUMENT = new Schema({
     },
 })
 
-module.exports = mongoose.model('document_model', DOCUMENT)
+module.exports = mongoose.model('doc_document', DOCUMENT)
