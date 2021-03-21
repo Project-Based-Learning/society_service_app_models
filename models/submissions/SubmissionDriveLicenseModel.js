@@ -3,15 +3,19 @@ const {Schema} = mongoose;
 
 const SUBMISSION = new Schema({
     id: String,
-    identityId: String,
+    applicantId: String,
     departmentId: String,
-    submissionTypeCode: String,
+    isNewSubmission: {
+        type: Boolean,
+        default: true
+    },
+    driveLicenseType: String,
     submissionRequirements: {
         identityId: String,
-        identityGroupId: String,
+        healthCertificate: String,
     },
     submissionProgress: Number,
-    submissionStatus: Boolean,
+    submissionStatus: Number,
     note: String,
     dateModified: {
         type: Date, 

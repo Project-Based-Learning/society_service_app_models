@@ -9,7 +9,7 @@ const CHILD_IDENTITY = new Schema({
         lastName: String,
     },
     profileImage: String,
-    filedBy: String,
+    applicantId: String,
     identityGroupId: String,
     deedOfBirthId: String,
     childIdentityStatus: Number,

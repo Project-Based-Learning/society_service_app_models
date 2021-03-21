@@ -3,15 +3,40 @@ const {Schema} = mongoose;
 
 const SUBMISSION = new Schema({
     id: String,
-    identityId: String,
     departmentId: String,
-    submissionTypeCode: String,
+    profileData: {
+        name: {
+            firstName: String,
+            middleName: String,
+            lastName: String,
+        },
+        birthCountry: String,
+        birthCity: String,
+        birthDate: Date,
+        sex: Number,
+        address: String,
+        addressDetail: {
+            addressProvince: Number,
+            addressCity: Number,
+            addressSubDistrict: Number,
+            addressKelurahan: Number,
+            addressVillage: Number,
+            addressRW: Number,
+            addressRT: Number,
+        },
+        religion: String,
+        profession: String,
+        nationality: String,
+    },
     submissionRequirements: {
-        identityId: String,
+        coveringLetter: String,
         identityGroupId: String,
+        deedOfBirthId: String,
+        limitedStayPermitId: String,
+        imageProfile: String
     },
     submissionProgress: Number,
-    submissionStatus: Boolean,
+    submissionStatus: Number,
     note: String,
     dateModified: {
         type: Date, 

@@ -3,13 +3,14 @@ const {Schema} = mongoose;
 
 const DEED_OF_BIRTH = new Schema({
     id: String,
-    filedBy: String,
+    applicantId: String,
     departmentId: String,
     name: {
         firstName: String,
         middleName: String,
         lastName: String,
     },
+    sex: Number,
     birthDate: Date,
     birthCountry: String,
     birthProvince: String,

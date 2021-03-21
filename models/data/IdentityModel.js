@@ -22,8 +22,12 @@ const IDENTITY = new Schema({
     },
     profileImage: String,
     fingerPrint: String,
+    signature: String,
     bloodType: String,
-    maritalStatus: Boolean,
+    maritalStatus: {
+        type: Boolean,
+        default: false
+    },
     profession: String,
     contacts: {
         phone: String,
@@ -44,8 +48,10 @@ const IDENTITY = new Schema({
         }
     ],
     submisionId: String,
-
-
+    isActive: {
+        type: Boolean,
+        default: true
+    },
     departmentApproverId: String,
     dateModified: {
         type: Date, 
