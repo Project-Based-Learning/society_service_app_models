@@ -1,7 +1,11 @@
 # Society Service App Models
 
-## Features
--
+## Features/Models/Table
+- Users
+- Data
+- Submissions
+- Logs
+
 ## Authors
 - Zulkarnain
 - Wahyu Ivan Prasetya
