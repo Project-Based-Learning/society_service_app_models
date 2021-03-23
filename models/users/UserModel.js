@@ -8,7 +8,6 @@ const USER = new Schema({
     userEmail: String,
     userPassword: {
         type: String,
-        get: generateHash,
         set: generateHash
     },
     dateModified: {
@@ -28,7 +27,7 @@ function generateHash(password) {
   
 // checking if password is valid
 USER.methods.validPassword = password => {
-    return bcrypt.compareSync(password, this.password);
+    return bcrypt.compareSync(password, this.userPassword);
 };
 
 module.exports = mongoose.model('doc_users', USER)
