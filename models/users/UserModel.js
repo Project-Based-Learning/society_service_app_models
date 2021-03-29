@@ -24,10 +24,5 @@ const USER = new Schema({
 function generateHash(password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 };
-  
-// checking if password is valid
-USER.methods.validPassword = password => {
-    return bcrypt.compareSync(password, this.userPassword);
-};
 
 module.exports = mongoose.model('doc_users', USER)
