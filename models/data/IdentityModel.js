@@ -38,7 +38,8 @@ const IDENTITY = new Schema({
         deedOfBirthId: String,
         childIdentityId: String,
         identityGroupId: String,
-        driveLicenseId: String,
+        driveLicenseId: [String],
+        passportId: [String]
     },
     identityStatus: Number,
     documents: [

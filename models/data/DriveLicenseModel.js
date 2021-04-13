@@ -6,6 +6,7 @@ const DRIVE_LICENSE = new Schema({
     identityId: String,
     driveLicenseType: String,
     driveLicenseStatus: Number,
+    profileImage: String,
     validUntil: Date,
     departmentApproverId: String,
     dateModified: {

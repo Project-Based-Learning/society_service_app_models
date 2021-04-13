@@ -7,7 +7,6 @@ const PASSPORT = new Schema({
     passportType: Number,
     passportStatus: Number,
     profileImage: String,
-    fingerPrint: String,
     validUntil: Date,
     departmentApproverId: String,
     dateModified: {
