@@ -1,15 +1,19 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
+const IdentityModel = require('../data/IdentityModel');
 const {Schema} = mongoose;
 
 const ADMIN = new Schema({
     id: String,
-    identityId: String,
+    identityId: {
+        type: String,
+        get: getIdentity
+    },
     adminEmail: String,
     adminUsername: String,
     adminPassword: {
         type: String,
-        set: generateHash
+        set: generateHash,
     },
     adminGrantLevel: {
         type: Number,
@@ -40,5 +44,10 @@ const ADMIN = new Schema({
 function generateHash(password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 };
+
+// get
+function getIdentity(id){
+    return IdentityModel.findOne({id: id});
+}
 
 module.exports = mongoose.model('doc_admins', ADMIN)
