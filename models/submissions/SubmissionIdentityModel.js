@@ -30,8 +30,20 @@ const SUBMISSION = new Schema({
     },
     submissionRequirements: {
         coveringLetter: String,
-        identityGroupId: String,
-        deedOfBirthId: String,
+        identityGroupId: {
+            id: String,
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_identity_group'
+            }
+        },
+        deedOfBirthId: {
+            id: String,
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_deedofbirth'
+            }
+        },
         limitedStayPermitId: String,
         imageProfile: String
     },

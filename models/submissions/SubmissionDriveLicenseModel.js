@@ -3,7 +3,13 @@ const {Schema} = mongoose;
 
 const SUBMISSION = new Schema({
     id: String,
-    applicantId: String,
+    applicantId: {
+        id: String,
+        data: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_identity'
+        }
+    },
     departmentId: String,
     isNewSubmission: {
         type: Boolean,
@@ -11,7 +17,13 @@ const SUBMISSION = new Schema({
     },
     driveLicenseType: String,
     submissionRequirements: {
-        identityId: String,
+        identityId: {
+            id: String,
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_identity'
+            }
+        },
         healthCertificate: String,
     },
     submissionProgress: Number,

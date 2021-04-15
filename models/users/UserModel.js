@@ -4,11 +4,31 @@ const {Schema} = mongoose;
 
 const USER = new Schema({
     id: String,
-    identityId: String,
+    identityId: {
+        id: {
+            type: String
+        },
+        data: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_identity'
+        }
+    },
     userEmail: String,
     userPassword: {
         type: String,
         set: generateHash
+    },
+    options: {
+        notifications: {
+            isEmail: {
+                type: Boolean,
+                default: true,
+            },
+            isWhatsApp: {
+                type: Boolean,
+                default: true
+            }
+        }
     },
     dateModified: {
         type: Date, 

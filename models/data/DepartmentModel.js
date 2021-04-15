@@ -13,8 +13,24 @@ const DEPARTMENT = new Schema({
     departmentKelurahanCode: Number,
     departmentVillageCode: Number,
     departmentIcon: String,
-    departmentAdminUsers: [String],
-    submissionTypeCode: [Number],
+    departmentAdminUsers: [{
+        id: {
+            type: String
+        },
+        data: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_identity'
+        }
+    }],
+    submissionTypeCode: [{
+        id: {
+            type: String
+        },
+        data: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_submission_type'
+        }
+    }],
     departmentStatus: Number,
     creator_id: String,
     dateModified: {

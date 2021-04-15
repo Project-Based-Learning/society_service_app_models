@@ -3,7 +3,15 @@ const {Schema} = mongoose;
 
 const IDENTITY_GROUP = new Schema({
     id: String,
-    headofGroupId: String,
+    headOfGroupId: {
+        id: {
+            type: String
+        },
+        data: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_identity'
+        }
+    },
     member: [
         {
             name: {
@@ -11,7 +19,15 @@ const IDENTITY_GROUP = new Schema({
                 middleName: String,
                 lastName: String,
             },
-            identityId: String,
+            identityId: {
+                id: {
+                    type: String
+                },
+                data: {
+                    type: Schema.Types.ObjectId,
+                    ref: 'doc_identity'
+                }
+            },
             sex: Number,
             deedOfBirtId: String,
             religion: String,
@@ -23,7 +39,24 @@ const IDENTITY_GROUP = new Schema({
             nationality: String,
         }
     ],
-    departmentApproverId: String,
+    departmentApproverId: {
+        id: {
+            type: String
+        },
+        data: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_department'
+        }
+    },
+    submissionId: {
+        id: {
+            type: String
+        },
+        data: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_submission_identity_group'
+        }
+    },
     dateModified: {
         type: Date,
         default: Date.now()

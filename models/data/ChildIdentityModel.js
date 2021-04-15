@@ -3,17 +3,58 @@ const {Schema} = mongoose;
 
 const CHILD_IDENTITY = new Schema({
     id: String,
-    departmentId: String,
     name: {
         firstName: String,
         middleName: String,
         lastName: String,
     },
     profileImage: String,
-    applicantId: String,
-    identityGroupId: String,
-    deedOfBirthId: String,
+    applicantId: {
+        id: {
+            type: String
+        },
+        data: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_identity'
+        }
+    },
+    identityGroupId: {
+        id: {
+            type: String
+        },
+        data: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_identity_group'
+        }
+    },
+    deedOfBirthId: {
+        id: {
+            type: String
+        },
+        data: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_deedof_birth'
+        }
+    },
     childIdentityStatus: Number,
+    departmentApproverId: {
+        id: {
+            type: String
+        },
+        data: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_department'
+        }
+    },
+    submissionId: {
+        id: {
+            type: String
+        },
+        data: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_submission_child_identity'
+        }
+    },
     dateModified: {
         type: Date, 
         default: Date.now()

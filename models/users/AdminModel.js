@@ -4,7 +4,15 @@ const {Schema} = mongoose;
 
 const ADMIN = new Schema({
     id: String,
-    identityId: String,
+    identityId: {
+        id: {
+            type: String
+        },
+        data: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_identity'
+        }
+    },
     adminEmail: String,
     adminUsername: String,
     adminPassword: {
@@ -25,6 +33,18 @@ const ADMIN = new Schema({
     },
     adminDepartmentId: String,
     creatorId: String,
+    options: {
+        notifications: {
+            isEmail: {
+                type: Boolean,
+                default: true,
+            },
+            isWhatsApp: {
+                type: Boolean,
+                default: true
+            }
+        }
+    },
     dateModified: {
         type: Date, 
         default: Date.now()

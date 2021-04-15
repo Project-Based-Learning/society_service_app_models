@@ -3,20 +3,56 @@ const {Schema} = mongoose;
 
 const SUBMISSION = new Schema({
     id: String,
-    applicantId: String,
+    applicantId: {
+        id: {
+            type: String
+        },
+        data: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_identity'
+        }
+    },
     departmentId: String,
     submissionRequirements: {
         birthCertificate: String,
         sptjm: String,
         marriageCertificate: String,
-        husbandIdentityId: String,
-        wifeIdentityId: String,
-        identityGroupId: String,
-        witnessIdentityId: [String],
+        husbandidentityId: {
+            id: String,
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_identity'
+            }
+        },
+        wifeidentityId: {
+            id: String,
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_identity'
+            }
+        },
+        identityGroupId: {
+            id: String,
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_identity_group'
+            }
+        },
+        witnessIdentityId: [{
+            id: String,
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_identity'
+            }
+        }],
         powerOfAttorney: String,
         limitedStayPermitId: String,
         passport: {
             id: String,
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_passport'
+            },
             document: String
         }
     },

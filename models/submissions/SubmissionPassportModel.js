@@ -3,7 +3,15 @@ const {Schema} = mongoose;
 
 const SUBMISSION = new Schema({
     id: String,
-    applicantId: String,
+    applicantId: {
+        id: {
+            type: String
+        },
+        data: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_identity'
+        }
+    },
     departmentId: String,
     isNewSubmission: {
         type: Boolean,
@@ -11,8 +19,21 @@ const SUBMISSION = new Schema({
     },
     passportType: Number,
     submissionRequirements: {
-        identityId: String,
-        identityGroupId: String,
+        identityId: {
+            id: String,
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_identity'
+            }
+        },
+        identityGroupId: {
+            id: String,
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_identity_group'
+            },
+            document: String
+        },
         marriageCertificate: String
     },
     submissionProgress: Number,

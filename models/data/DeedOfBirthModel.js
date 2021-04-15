@@ -3,8 +3,15 @@ const {Schema} = mongoose;
 
 const DEED_OF_BIRTH = new Schema({
     id: String,
-    applicantId: String,
-    departmentId: String,
+    applicantId: {
+        id: {
+            type: String
+        },
+        data: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_identity'
+        }
+    },
     name: {
         firstName: String,
         middleName: String,
@@ -16,7 +23,33 @@ const DEED_OF_BIRTH = new Schema({
     birthProvince: String,
     birthCity: String,
     sequenceOfChildren: Number,
-    motherIdentityId: String,
+    motherIdentityId: {
+        id: {
+            type: String
+        },
+        data: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_identity'
+        }
+    },
+    departmentApproverId: {
+        id: {
+            type: String
+        },
+        data: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_department'
+        }
+    },
+    submissionId: {
+        id: {
+            type: String
+        },
+        data: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_submission_deedofbirth'
+        }
+    },
     dateModified: {
         type: Date, 
         default: Date.now()

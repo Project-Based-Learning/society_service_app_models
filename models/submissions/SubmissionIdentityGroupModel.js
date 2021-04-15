@@ -3,11 +3,23 @@ const {Schema} = mongoose;
 
 const SUBMISSION = new Schema({
     id: String,
-    applicantBy: String,
+    applicantId: {
+        id: String,
+        data: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_identity'
+        }
+    },
     departmentId: String,
     submissionRequirements: {
         coveringLetter: String,
-        identityId: String,
+        identityId: {
+            id: String,
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_identity'
+            }
+        },
         identityGroupId: String,
     },
     submissionProgress: Number,

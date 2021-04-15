@@ -35,11 +35,41 @@ const IDENTITY = new Schema({
         email: String
     },
     linkedData: {
-        deedOfBirthId: String,
-        childIdentityId: String,
-        identityGroupId: String,
-        driveLicenseId: [String],
-        passportId: [String]
+        deedOfBirthId: {
+            id: String,
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_deedofbirth'
+            }
+        },
+        childidentityId: {
+            id: String,
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_identity'
+            }
+        },
+        identityGroupId: {
+            id: String,
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_identity_group'
+            }
+        },
+        driveLicenseId: [{
+            id: String,
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_drive_license'
+            }
+        }],
+        passportId: [{
+            id: String,
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_passport'
+            }
+        }]
     },
     identityStatus: Number,
     documents: [
@@ -48,12 +78,28 @@ const IDENTITY = new Schema({
             ref: 'doc_document'
         }
     ],
-    submisionId: String,
+    submissionId: {
+        id: {
+            type: String
+        },
+        data: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_submission_identity'
+        }
+    },
     isActive: {
         type: Boolean,
         default: true
     },
-    departmentApproverId: String,
+    departmentApproverId: {
+        id: {
+            type: String
+        },
+        data: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_department'
+        }
+    },
     dateModified: {
         type: Date, 
         default: Date.now()
