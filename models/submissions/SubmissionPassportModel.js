@@ -39,13 +39,39 @@ const SUBMISSION = new Schema({
     submissionProgress: Number,
     submissionStatus: Number,
     note: String,
-    dateModified: {
-        type: Date, 
-        default: Date.now()
-    },
+    dateModified: [{
+        date: {
+            type: Date, 
+            default: Date.now()
+        },
+        modifierId: {
+            id: {
+                type: String
+            },
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_admins'
+            }
+        },
+        details: {
+            type: String,
+            default: "-"
+        }
+    }],
     dateCreated: {
-        type: Date, 
-        default: Date.now()
+        date: {
+            type: Date, 
+            default: Date.now()
+        },
+        applicantId: {
+            id: {
+                type: String
+            },
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_identity'
+            }
+        },
     },
 })
 

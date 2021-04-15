@@ -8,7 +8,10 @@ const CHILD_IDENTITY = new Schema({
         middleName: String,
         lastName: String,
     },
-    profileImage: String,
+    profileImage: {
+        type: Schema.Types.ObjectId,
+        ref: 'doc_image'
+    },
     applicantId: {
         id: {
             type: String
@@ -55,10 +58,25 @@ const CHILD_IDENTITY = new Schema({
             ref: 'doc_submission_child_identity'
         }
     },
-    dateModified: {
-        type: Date, 
-        default: Date.now()
-    },
+    dateModified: [{
+        date: {
+            type: Date, 
+            default: Date.now()
+        },
+        modifierId: {
+            id: {
+                type: String
+            },
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_admins'
+            }
+        },
+        details: {
+            type: String,
+            default: "-"
+        }
+    }],
     dateCreated: {
         type: Date, 
         default: Date.now()

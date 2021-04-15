@@ -30,10 +30,25 @@ const USER = new Schema({
             }
         }
     },
-    dateModified: {
-        type: Date, 
-        default: Date.now()
-    },
+    dateModified: [{
+        date: {
+            type: Date, 
+            default: Date.now()
+        },
+        modifierId: {
+            id: {
+                type: String
+            },
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_admins'
+            }
+        },
+        details: {
+            type: String,
+            default: "-"
+        }
+    }],
     dateCreated: {
         type: Date, 
         default: Date.now()

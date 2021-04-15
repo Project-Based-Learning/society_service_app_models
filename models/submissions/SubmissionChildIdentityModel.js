@@ -3,15 +3,6 @@ const {Schema} = mongoose;
 
 const SUBMISSION = new Schema({
     id: String,
-    applicantId: {
-        id: {
-            type: String
-        },
-        data: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_identity'
-        }
-    },
     departmentId: String,
     submissionRequirements: {
         deedOfBirthId: {
@@ -28,18 +19,47 @@ const SUBMISSION = new Schema({
                 ref: 'doc_identity_group'
             }
         },
-        imageProfile: String
+        imageProfile: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_image'
+        }
     },
     submissionProgress: Number,
     submissionStatus: Number,
     note: String,
-    dateModified: {
-        type: Date, 
-        default: Date.now()
-    },
+    dateModified: [{
+        date: {
+            type: Date, 
+            default: Date.now()
+        },
+        modifierId: {
+            id: {
+                type: String
+            },
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_admins'
+            }
+        },
+        details: {
+            type: String,
+            default: "-"
+        }
+    }],
     dateCreated: {
-        type: Date, 
-        default: Date.now()
+        date: {
+            type: Date, 
+            default: Date.now()
+        },
+        applicantId: {
+            id: {
+                type: String
+            },
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_identity'
+            }
+        },
     },
 })
 

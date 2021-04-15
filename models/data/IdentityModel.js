@@ -20,9 +20,18 @@ const IDENTITY = new Schema({
         addressRW: Number,
         addressRT: Number,
     },
-    profileImage: String,
-    fingerPrint: String,
-    signature: String,
+    profileImage: {
+        type: Schema.Types.ObjectId,
+        ref: 'doc_image'
+    },
+    fingerPrint: {
+        type: Schema.Types.ObjectId,
+        ref: 'doc_image'
+    },
+    signature: {
+        type: Schema.Types.ObjectId,
+        ref: 'doc_image'
+    },
     bloodType: String,
     maritalStatus: {
         type: Boolean,
@@ -100,10 +109,25 @@ const IDENTITY = new Schema({
             ref: 'doc_department'
         }
     },
-    dateModified: {
-        type: Date, 
-        default: Date.now()
-    },
+    dateModified: [{
+        date: {
+            type: Date, 
+            default: Date.now()
+        },
+        modifierId: {
+            id: {
+                type: String
+            },
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_admins'
+            }
+        },
+        details: {
+            type: String,
+            default: "-"
+        }
+    }],
     dateCreated: {
         type: Date, 
         default: Date.now()

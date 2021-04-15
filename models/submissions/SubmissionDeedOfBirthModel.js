@@ -3,28 +3,28 @@ const {Schema} = mongoose;
 
 const SUBMISSION = new Schema({
     id: String,
-    applicantId: {
-        id: {
-            type: String
-        },
-        data: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_identity'
-        }
-    },
     departmentId: String,
     submissionRequirements: {
-        birthCertificate: String,
-        sptjm: String,
-        marriageCertificate: String,
-        husbandidentityId: {
+        birthCertificate: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_document'
+        },
+        sptjm: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_document'
+        },
+        marriageCertificate: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_document'
+        },
+        husbandIdentityId: {
             id: String,
             data: {
                 type: Schema.Types.ObjectId,
                 ref: 'doc_identity'
             }
         },
-        wifeidentityId: {
+        wifeIdentityId: {
             id: String,
             data: {
                 type: Schema.Types.ObjectId,
@@ -45,8 +45,14 @@ const SUBMISSION = new Schema({
                 ref: 'doc_identity'
             }
         }],
-        powerOfAttorney: String,
-        limitedStayPermitId: String,
+        powerOfAttorney: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_document'
+        },
+        limitedStayPermitId: {
+            type: Schema.Types.ObjectId,
+            ref: 'doc_document'
+        },
         passport: {
             id: String,
             data: {
@@ -59,13 +65,39 @@ const SUBMISSION = new Schema({
     submissionProgress: Number,
     submissionStatus: Number,
     note: String,
-    dateModified: {
-        type: Date, 
-        default: Date.now()
-    },
+    dateModified: [{
+        date: {
+            type: Date, 
+            default: Date.now()
+        },
+        modifierId: {
+            id: {
+                type: String
+            },
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_admins'
+            }
+        },
+        details: {
+            type: String,
+            default: "-"
+        }
+    }],
     dateCreated: {
-        type: Date, 
-        default: Date.now()
+        date: {
+            type: Date, 
+            default: Date.now()
+        },
+        applicantId: {
+            id: {
+                type: String
+            },
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_identity'
+            }
+        },
     },
 })
 

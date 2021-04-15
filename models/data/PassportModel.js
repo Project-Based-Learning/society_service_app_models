@@ -14,7 +14,10 @@ const PASSPORT = new Schema({
     },
     passportType: Number,
     passportStatus: Number,
-    profileImage: String,
+    profileImage: {
+        type: Schema.Types.ObjectId,
+        ref: 'doc_image'
+    },
     validUntil: Date,
     departmentApproverId: {
         id: {
@@ -34,10 +37,25 @@ const PASSPORT = new Schema({
             ref: 'doc_submission_passport'
         }
     },
-    dateModified: {
-        type: Date,
-        default: Date.now()
-    },
+    dateModified: [{
+        date: {
+            type: Date, 
+            default: Date.now()
+        },
+        modifierId: {
+            id: {
+                type: String
+            },
+            data: {
+                type: Schema.Types.ObjectId,
+                ref: 'doc_admins'
+            }
+        },
+        details: {
+            type: String,
+            default: "-"
+        }
+    }],
     dateCreated: {
         type: Date, 
         default: Date.now()
