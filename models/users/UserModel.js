@@ -20,7 +20,7 @@ const USER = new Schema({
     },
     userAccountStatus: {
         type: Number,
-        deafult: 1
+        default: 1
     },
     options: {
         notifications: {
