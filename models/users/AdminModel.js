@@ -32,7 +32,6 @@ const ADMIN = new Schema({
         default: 1
     },
     adminDepartmentId: String,
-    creatorId: String,
     options: {
         notifications: {
             isEmail: {

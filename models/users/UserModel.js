@@ -18,6 +18,10 @@ const USER = new Schema({
         type: String,
         set: generateHash
     },
+    userAccountStatus: {
+        type: Number,
+        deafult: 1
+    },
     options: {
         notifications: {
             isEmail: {
