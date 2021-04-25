@@ -12,7 +12,7 @@ const IDENTITY_GROUP = new Schema({
             ref: 'doc_identity'
         }
     },
-    member: [
+    members: [
         {
             name: {
                 firstName: String,
