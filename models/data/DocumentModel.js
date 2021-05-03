@@ -5,13 +5,9 @@ const DOCUMENT = new Schema({
     id: String,
     identityId: String,
     submissionId: String,
-    link: String,
+    fileName: String,
     ext: String,
     documentDescription: String,
-    dateModified: {
-        type: Date, 
-        default: Date.now()
-    },
     dateCreated: {
         type: Date, 
         default: Date.now()

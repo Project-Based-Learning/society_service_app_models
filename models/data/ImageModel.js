@@ -4,13 +4,10 @@ const {Schema} = mongoose;
 const IMAGE = new Schema({
     id: String,
     identityId: String,
-    link: String,
+    submissionId: String,
+    fileName: String,
     ext: String,
     imageDescription: String,
-    dateModified: {
-        type: Date, 
-        default: Date.now()
-    },
     dateCreated: {
         type: Date, 
         default: Date.now()
