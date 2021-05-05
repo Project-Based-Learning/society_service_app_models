@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const DOCUMENT = new Schema({
-    id: String,
-    identityId: String,
+    uploaderId: String,
     submissionId: String,
     fileName: String,
     ext: String,
