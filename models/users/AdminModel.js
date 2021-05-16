@@ -15,6 +15,7 @@ const ADMIN = new Schema({
     },
     adminEmail: String,
     adminUsername: String,
+    adminProfile: String,
     adminPassword: {
         type: String,
         set: generateHash
