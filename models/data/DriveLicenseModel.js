@@ -14,10 +14,7 @@ const DRIVE_LICENSE = new Schema({
     },
     driveLicenseType: String,
     driveLicenseStatus: Number,
-    profileImage: {
-        type: Schema.Types.ObjectId,
-        ref: 'doc_image'
-    },
+    profileImage: String,
     validUntil: Date,
     departmentApproverId: {
         id: {

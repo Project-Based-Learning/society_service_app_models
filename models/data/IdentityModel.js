@@ -20,18 +20,9 @@ const IDENTITY = new Schema({
         addressRW: Number,
         addressRT: Number,
     },
-    profileImage: {
-        type: Schema.Types.ObjectId,
-        ref: 'doc_image'
-    },
-    fingerPrint: {
-        type: Schema.Types.ObjectId,
-        ref: 'doc_image'
-    },
-    signature: {
-        type: Schema.Types.ObjectId,
-        ref: 'doc_image'
-    },
+    profileImage: String,
+    fingerPrint: String,
+    signature: String,
     bloodType: String,
     maritalStatus: {
         type: Boolean,
@@ -82,10 +73,7 @@ const IDENTITY = new Schema({
     },
     identityStatus: Number,
     documents: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_document'
-        }
+        String
     ],
     submissionId: {
         id: {

@@ -5,18 +5,9 @@ const SUBMISSION = new Schema({
     id: String,
     departmentId: String,
     submissionRequirements: {
-        birthCertificate: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_document'
-        },
-        sptjm: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_document'
-        },
-        marriageCertificate: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_document'
-        },
+        birthCertificate: String,
+        sptjm: String,
+        marriageCertificate: String,
         husbandIdentityId: {
             id: String,
             data: {
@@ -45,14 +36,8 @@ const SUBMISSION = new Schema({
                 ref: 'doc_identity'
             }
         }],
-        powerOfAttorney: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_document'
-        },
-        limitedStayPermitId: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_document'
-        },
+        powerOfAttorney: String,
+        limitedStayPermitId: String,
         passport: {
             id: String,
             data: {

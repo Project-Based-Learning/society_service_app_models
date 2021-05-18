@@ -14,10 +14,7 @@ const PASSPORT = new Schema({
     },
     passportType: Number,
     passportStatus: Number,
-    profileImage: {
-        type: Schema.Types.ObjectId,
-        ref: 'doc_image'
-    },
+    profileImage: String,
     validUntil: Date,
     departmentApproverId: {
         id: {

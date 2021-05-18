@@ -8,10 +8,7 @@ const CHILD_IDENTITY = new Schema({
         middleName: String,
         lastName: String,
     },
-    profileImage: {
-        type: Schema.Types.ObjectId,
-        ref: 'doc_image'
-    },
+    profileImage: String,
     applicantId: {
         id: {
             type: String
