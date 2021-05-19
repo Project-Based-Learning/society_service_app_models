@@ -38,6 +38,10 @@ const SUBMISSION = new Schema({
     },
     submissionProgress: Number,
     submissionStatus: Number,
+    submissionIsPaid: {
+        type: Boolean,
+        default: false
+    },
     note: String,
     dateModified: [{
         date: {
