@@ -16,6 +16,12 @@ const SUBMISSION = new Schema({
         identityGroupId: String,
     },
     submissionProgress: Number,
+    submissionProgressDetail: [
+        {
+            progressName: String,
+            date: Date
+        },
+    ],
     submissionStatus: Number,
     note: String,
     dateModified: [{

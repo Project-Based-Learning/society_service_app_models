@@ -48,6 +48,12 @@ const SUBMISSION = new Schema({
         }
     },
     submissionProgress: Number,
+    submissionProgressDetail: [
+        {
+            progressName: String,
+            date: Date
+        },
+    ],
     submissionStatus: Number,
     note: String,
     dateModified: [{

@@ -20,6 +20,12 @@ const SUBMISSION = new Schema({
         healthCertificate: String,
     },
     submissionProgress: Number,
+    submissionProgressDetail: [
+        {
+            progressName: String,
+            date: Date
+        },
+    ],
     submissionStatus: Number,
     submissionIsPaid: {
         type: Boolean,
