@@ -19,10 +19,7 @@ const SUBMISSION = new Schema({
                 ref: 'doc_identity_group'
             }
         },
-        imageProfile: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_image'
-        }
+        imageProfile: String
     },
     submissionProgress: Number,
     submissionProgressDetail: [
