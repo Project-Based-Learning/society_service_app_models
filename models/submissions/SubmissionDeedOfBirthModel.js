@@ -4,6 +4,17 @@ const {Schema} = mongoose;
 const SUBMISSION = new Schema({
     id: String,
     departmentId: String,
+    name: {
+        firstName: String,
+        middleName: String,
+        lastName: String,
+    },
+    sex: Number,
+    birthDate: Date,
+    birthCountry: String,
+    birthProvince: String,
+    birthCity: String,
+    sequenceOfChildren: Number,
     submissionRequirements: {
         birthCertificate: String,
         sptjm: String,

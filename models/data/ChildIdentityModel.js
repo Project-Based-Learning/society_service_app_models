@@ -37,15 +37,7 @@ const CHILD_IDENTITY = new Schema({
         }
     },
     childIdentityStatus: Number,
-    departmentApproverId: {
-        id: {
-            type: String
-        },
-        data: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_department'
-        }
-    },
+    departmentApproverId:  String,
     submissionId: {
         id: {
             type: String

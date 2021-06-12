@@ -39,15 +39,7 @@ const IDENTITY_GROUP = new Schema({
             nationality: String,
         }
     ],
-    departmentApproverId: {
-        id: {
-            type: String
-        },
-        data: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_department'
-        }
-    },
+    departmentApproverId: String,
     submissionId: {
         id: {
             type: String

@@ -32,15 +32,7 @@ const DEED_OF_BIRTH = new Schema({
             ref: 'doc_identity'
         }
     },
-    departmentApproverId: {
-        id: {
-            type: String
-        },
-        data: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_department'
-        }
-    },
+    departmentApproverId:  String,
     submissionId: {
         id: {
             type: String

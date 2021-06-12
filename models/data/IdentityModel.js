@@ -88,15 +88,7 @@ const IDENTITY = new Schema({
         type: Boolean,
         default: true
     },
-    departmentApproverId: {
-        id: {
-            type: String
-        },
-        data: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_department'
-        }
-    },
+    departmentApproverId: String,
     dateModified: [{
         date: {
             type: Date, 
