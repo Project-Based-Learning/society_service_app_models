@@ -20,7 +20,10 @@ const CHILD_IDENTITY = new Schema({
             default: ""
         },
     },
-    profileImage: String,
+    profileImage: {
+        type: String,
+        default: ""
+    },
     applicantId: {
         type: String,
         default: ""

@@ -19,7 +19,10 @@ const DRIVE_LICENSE = new Schema({
         type: String,
         default: ""
     },
-    validUntil: Date,
+    validUntil: {
+        type: Date,
+        default: ""
+    },
     departmentApproverid: {
         type: String,
         default: ""

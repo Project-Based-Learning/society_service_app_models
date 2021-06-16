@@ -10,9 +10,18 @@ const DOCUMENT = new Schema({
         type: String,
         default: ""
     },
-    fileName: String,
-    ext: String,
-    documentDescription: String,
+    fileName: {
+        type: String,
+        default: ""
+    },
+    ext: {
+        type: String,
+        default: ""
+    },
+    documentDescription: {
+        type: String,
+        default: ""
+    },
     dateCreated: {
         type: Date, 
         default: Date.now()
