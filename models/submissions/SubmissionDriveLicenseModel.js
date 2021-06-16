@@ -8,7 +8,7 @@ const SUBMISSION = new Schema({
         type: Boolean,
         default: true
     },
-    driveLicenseType: String,
+    driveLicenseType: Number,
     submissionRequirements: {
         identityId: {
             id: String,

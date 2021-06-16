@@ -12,7 +12,7 @@ const DRIVE_LICENSE = new Schema({
             ref: 'doc_identity'
         }
     },
-    driveLicenseType: String,
+    driveLicenseType: Number,
     driveLicenseStatus: Number,
     profileImage: String,
     validUntil: Date,
