@@ -11,7 +11,10 @@ const PASSPORT = new Schema({
         default: ""
     },
     passportType: Number,
-    passportStatus: Number,
+    passportStatus: {
+        type: Number,
+        default: 1
+    },
     profileImage: {
         type: String,
         default: ""

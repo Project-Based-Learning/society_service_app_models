@@ -29,7 +29,10 @@ const DEPARTMENT = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'doc_submission_type'
     }],
-    departmentStatus: Number,
+    departmentStatus: {
+        type: Number,
+        default: 1
+    },
     dateModified: [{
         date: {
             type: Date, 

@@ -106,7 +106,10 @@ const IDENTITY = new Schema({
             }
         ]
     },
-    identityStatus: Number,
+    identityStatus: {
+        type: Number,
+        default: 1
+    },
     documents: [
         {
             id: {

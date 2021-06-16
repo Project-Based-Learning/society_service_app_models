@@ -52,12 +52,12 @@ const IDENTITY_GROUP = new Schema({
                 default: ""
             },
             maritalStatus: {
-                type: String,
-                default: ""
+                type: Number,
+                default: 1
             },
             memberStatus: {
-                type: String,
-                default: ""
+                type: Number,
+                default: 1
             },
             nationality: {
                 type: String,
