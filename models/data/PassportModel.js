@@ -23,7 +23,7 @@ const PASSPORT = new Schema({
         type: Date,
         default: ""
     },
-    departmentApproverid: {
+    departmentApproverId: {
         type: String,
         default: ""
     },

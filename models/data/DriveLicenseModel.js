@@ -23,7 +23,7 @@ const DRIVE_LICENSE = new Schema({
         type: Date,
         default: ""
     },
-    departmentApproverid: {
+    departmentApproverId: {
         type: String,
         default: ""
     },

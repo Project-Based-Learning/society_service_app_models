@@ -126,7 +126,7 @@ const IDENTITY = new Schema({
         type: Boolean,
         default: true
     },
-    departmentApproverid: {
+    departmentApproverId: {
         type: String,
         default: ""
     },

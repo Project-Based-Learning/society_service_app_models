@@ -6,7 +6,7 @@ const SUBMISSION = new Schema({
         type: String,
         default: ""
     },
-    departmentid: {
+    departmentId: {
         type: String,
         default: ""
     },

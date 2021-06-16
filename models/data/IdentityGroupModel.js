@@ -65,7 +65,7 @@ const IDENTITY_GROUP = new Schema({
             },
         }
     ],
-    departmentApproverid: {
+    departmentApproverId: {
         type: String,
         default: ""
     },

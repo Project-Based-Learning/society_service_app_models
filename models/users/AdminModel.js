@@ -39,7 +39,7 @@ const ADMIN = new Schema({
         type: Number,
         default: 1
     },
-    adminDepartmentid: {
+    adminDepartmentId: {
         type: String,
         default: ""
     },
