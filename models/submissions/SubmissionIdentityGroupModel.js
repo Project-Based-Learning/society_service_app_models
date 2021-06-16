@@ -2,41 +2,60 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const SUBMISSION = new Schema({
-    id: String,
-    departmentId: String,
-    submissionRequirements: {
-        coveringLetter: String,
-        identityId: {
-            id: String,
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_identity'
-            }
-        },
-        identityGroupId: String,
+    id: {
+        type: String,
+        default: ""
     },
-    submissionProgress: Number,
+    departmentid: {
+        type: String,
+        default: ""
+    },
+    submissionRequirements: {
+        coveringLetter: {
+            type: String,
+            default: ""
+        },
+        identityId: {
+            type: String,
+            default: ""
+        },
+        identityGroupid: {
+            type: String,
+            default: ""
+        },
+    },
+    submissionProgress: {
+        type: Number,
+        default: 0
+    },
     submissionProgressDetail: [
         {
-            progressName: String,
-            date: Date
+            progressName: {
+                type: String,
+                default: ""
+            },
+            date: {
+                type: Date,
+                default: ""
+            }
         },
     ],
-    submissionStatus: Number,
-    note: String,
+    submissionStatus: {
+        type: Number,
+        default: 1
+    },
+    note: {
+        type: String,
+        default: ""
+    },
     dateModified: [{
         date: {
             type: Date, 
             default: Date.now()
         },
         modifierId: {
-            id: {
-                type: String
-            },
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_admins'
-            }
+            type: String,
+            default: ""
         },
         details: {
             type: String,
@@ -49,13 +68,8 @@ const SUBMISSION = new Schema({
             default: Date.now()
         },
         applicantId: {
-            id: {
-                type: String
-            },
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_identity'
-            }
+            type: String,
+            default: ""
         },
     },
 })

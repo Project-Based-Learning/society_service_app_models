@@ -2,45 +2,51 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const DEED_OF_BIRTH = new Schema({
-    id: String,
+    id: {
+        type: String,
+        default: ""
+    },
     applicantId: {
-        id: {
-            type: String
-        },
-        data: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_identity'
-        }
+        type: String,
+        default: ""
     },
     name: {
-        firstName: String,
-        middleName: String,
-        lastName: String,
+        firstName: {
+            type: String,
+            default: ""
+        },
+        middleName: {
+            type: String,
+            default: ""
+        },
+        lastName: {
+            type: String,
+            default: ""
+        },
     },
-    sex: Number,
-    birthDate: Date,
-    birthCountry: String,
-    birthProvince: String,
-    birthCity: String,
+    sex: {
+        type: Number,
+        default: 0
+    },
+    birthDate: {
+        type: Date,
+        default: ""
+    },
+    birthCountry: Number,
+    birthProvince: Number,
+    birthCity: Number,
     sequenceOfChildren: Number,
     motherIdentityId: {
-        id: {
-            type: String
-        },
-        data: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_identity'
-        }
+        type: String,
+        default: ""
     },
-    departmentApproverId:  String,
+    departmentApproverId: {
+        type: String,
+        default: ""
+    },
     submissionId: {
-        id: {
-            type: String
-        },
-        data: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_submission_deedofbirth'
-        }
+        type: String,
+        default: ""
     },
     dateModified: [{
         date: {
@@ -48,13 +54,8 @@ const DEED_OF_BIRTH = new Schema({
             default: Date.now()
         },
         modifierId: {
-            id: {
-                type: String
-            },
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_admins'
-            }
+            type: String,
+            default: ""
         },
         details: {
             type: String,

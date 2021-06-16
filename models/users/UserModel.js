@@ -3,17 +3,18 @@ const bcrypt = require('bcrypt-nodejs');
 const {Schema} = mongoose;
 
 const USER = new Schema({
-    id: String,
-    identityId: {
-        id: {
-            type: String
-        },
-        data: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_identity'
-        }
+    id: {
+        type: String,
+        default: ""
     },
-    userEmail: String,
+    identityId: {
+        type: Schema.Types.ObjectId,
+        ref: 'doc_identity'
+    },
+    userEmail: {
+        type: String,
+        default: ""
+    },
     userPassword: {
         type: String,
         set: generateHash
@@ -40,13 +41,8 @@ const USER = new Schema({
             default: Date.now()
         },
         modifierId: {
-            id: {
-                type: String
-            },
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_admins'
-            }
+            type: String,
+            default: ""
         },
         details: {
             type: String,

@@ -2,84 +2,118 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const SUBMISSION = new Schema({
-    id: String,
-    departmentId: String,
+    id: {
+        type: String,
+        default: ""
+    },
+    departmentid: {
+        type: String,
+        default: ""
+    },
     name: {
-        firstName: String,
-        middleName: String,
-        lastName: String,
+        firstName: {
+            type: String,
+            default: ""
+        },
+        middleName: {
+            type: String,
+            default: ""
+        },
+        lastName: {
+            type: String,
+            default: ""
+        },
     },
     sex: Number,
-    birthDate: Date,
-    birthCountry: String,
-    birthProvince: String,
-    birthCity: String,
+    birthDate: {
+        type: Date,
+        default: ""
+    },
+    birthCountry: Number,
+    birthProvince: Number,
+    birthCity: Number,
     sequenceOfChildren: Number,
     submissionRequirements: {
-        birthCertificate: String,
-        sptjm: String,
-        marriageCertificate: String,
+        birthCertificate: {
+            type: String,
+            default: ""
+        },
+        sptjm: {
+            type: String,
+            default: ""
+        },
+        marriageCertificate: {
+            type: String,
+            default: ""
+        },
         husbandIdentityId: {
-            id: String,
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_identity'
-            }
+            type: String,
+            default: ""
         },
         wifeIdentityId: {
-            id: String,
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_identity'
-            }
+            type: String,
+            default: ""
         },
         identityGroupId: {
-            id: String,
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_identity_group'
-            }
+            type: String,
+            default: ""
         },
-        witnessIdentityId: [{
-            id: String,
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_identity'
+        witnessIdentityId: [
+            {
+                id: {
+                    type: String,
+                    default: ""
+                }
             }
-        }],
-        powerOfAttorney: String,
-        limitedStayPermitId: String,
+        ],
+        powerOfAttorney: {
+            type: String,
+            default: ""
+        },
+        limitedStayPermitid: {
+            type: String,
+            default: ""
+        },
         passport: {
-            id: String,
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_passport'
+            id: {
+                type: String,
+                default: ""
             },
             document: String
         }
     },
-    submissionProgress: Number,
+    submissionProgress: {
+        type: Number,
+        default: 0
+    },
     submissionProgressDetail: [
         {
-            progressName: String,
-            date: Date
+            progressName: {
+                type: String,
+                default: ""
+            },
+            date: {
+                type: Date,
+                default: ""
+            }
         },
     ],
-    submissionStatus: Number,
-    note: String,
+    submissionStatus: {
+        type: Number,
+        default: 1
+    },
+    note: {
+        type: String,
+        default: ""
+    },
     dateModified: [{
         date: {
             type: Date, 
             default: Date.now()
         },
         modifierId: {
-            id: {
-                type: String
-            },
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_admins'
-            }
+            type: String,
+            default: ""
         },
         details: {
             type: String,
@@ -92,13 +126,8 @@ const SUBMISSION = new Schema({
             default: Date.now()
         },
         applicantId: {
-            id: {
-                type: String
-            },
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_identity'
-            }
+            type: String,
+            default: ""
         },
     },
 })

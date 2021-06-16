@@ -2,11 +2,26 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const IMAGE = new Schema({
-    uploaderId: String,
-    submissionId: String,
-    fileName: String,
-    ext: String,
-    imageDescription: String,
+    uploaderid: {
+        type: String,
+        default: ""
+    },
+    submissionid: {
+        type: String,
+        default: ""
+    },
+    fileName: {
+        type: String,
+        default: ""
+    },
+    ext: {
+        type: String,
+        default: ""
+    },
+    imageDescription: {
+        type: String,
+        default: ""
+    },
     dateCreated: {
         type: Date, 
         default: Date.now()

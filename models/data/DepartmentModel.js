@@ -3,33 +3,31 @@ const bcrypt = require('bcrypt-nodejs');
 const {Schema} = mongoose;
 
 const DEPARTMENT = new Schema({
-    id: String,
-    departmentName: String,
+    id: {
+        type: String,
+        default: ""
+    },
+    departmentName: {
+        type: String,
+        default: ""
+    },
     departmentLevel: Number,
-    departmentAddress: String,
+    departmentAddress: {
+        type: String,
+        default: ""
+    },
     departmentProvinceCode: Number,
     departmentCityCode: Number,
     departmentSubDistrictCode: Number,
     departmentKelurahanCode: Number,
     departmentVillageCode: Number,
-    departmentIcon: String,
-    departmentAdminUsers: [{
-        id: {
-            type: String
-        },
-        data: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_identity'
-        }
-    }],
+    departmentIcon: {
+        type: String,
+        default: ""
+    },
     submissionTypeCode: [{
-        id: {
-            type: String
-        },
-        data: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_submission_type'
-        }
+        type: Schema.Types.ObjectId,
+        ref: 'doc_submission_type'
     }],
     departmentStatus: Number,
     dateModified: [{
@@ -38,13 +36,8 @@ const DEPARTMENT = new Schema({
             default: Date.now()
         },
         modifierId: {
-            id: {
-                type: String
-            },
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_admins'
-            }
+            type: String,
+            default: ""
         },
         details: {
             type: String,
@@ -57,14 +50,9 @@ const DEPARTMENT = new Schema({
             default: Date.now()
         },
         creatorId: {
-            id: {
-                type: String
-            },
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_admins'
-            }
-        }
+            type: String,
+            default: ""
+        },
     },
 })
 

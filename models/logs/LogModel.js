@@ -2,7 +2,10 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const LOG = new Schema({
-    id: String,
+    id: {
+        type: String,
+        default: ""
+    },
     ip: String,
     country: String,
     HTTPRequestType: String,

@@ -2,29 +2,31 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const DRIVE_LICENSE = new Schema({
-    id: String,
+    id: {
+        type: String,
+        default: ""
+    },
     identityId: {
-        id: {
-            type: String
-        },
-        data: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_identity'
-        }
+        type: String,
+        default: ""
     },
     driveLicenseType: Number,
-    driveLicenseStatus: Number,
-    profileImage: String,
+    driveLicenseStatus: {
+        type: Number,
+        default: 1
+    },
+    profileImage: {
+        type: String,
+        default: ""
+    },
     validUntil: Date,
-    departmentApproverId: String,
+    departmentApproverid: {
+        type: String,
+        default: ""
+    },
     submissionId: {
-        id: {
-            type: String
-        },
-        data: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_submission_drive_license'
-        }
+        type: String,
+        default: ""
     },
     dateModified: [{
         date: {
@@ -32,13 +34,8 @@ const DRIVE_LICENSE = new Schema({
             default: Date.now()
         },
         modifierId: {
-            id: {
-                type: String
-            },
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_admins'
-            }
+            type: String,
+            default: ""
         },
         details: {
             type: String,

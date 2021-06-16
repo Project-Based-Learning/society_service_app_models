@@ -2,17 +2,18 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const SUBMISSION = new Schema({
-    id: String,
-    applicantId: {
-        id: {
-            type: String
-        },
-        data: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_identity'
-        }
+    id: {
+        type: String,
+        default: ""
     },
-    departmentId: String,
+    applicantId: {
+        type: String,
+        default: ""
+    },
+    departmentid: {
+        type: String,
+        default: ""
+    },
     isNewSubmission: {
         type: Boolean,
         default: true
@@ -20,48 +21,50 @@ const SUBMISSION = new Schema({
     passportType: Number,
     submissionRequirements: {
         identityId: {
-            id: String,
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_identity'
-            }
+            type: String,
+            default: ""
         },
         identityGroupId: {
-            id: String,
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_identity_group'
+            id: {
+                type: String,
+                default: ""
             },
             document: String
         },
         marriageCertificate: String
     },
-    submissionProgress: Number,
+    submissionProgress: {
+        type: Number,
+        default: 0
+    },
     submissionProgressDetail: [
         {
-            progressName: String,
-            date: Date
+            progressName: {
+                type: String,
+                default: ""
+            },
+            date: {
+                type: Date,
+                default: ""
+            }
         },
     ],
-    submissionStatus: Number,
-    submissionIsPaid: {
-        type: Boolean,
-        default: false
+    submissionStatus: {
+        type: Number,
+        default: 1
     },
-    note: String,
+    note: {
+        type: String,
+        default: ""
+    },
     dateModified: [{
         date: {
             type: Date, 
             default: Date.now()
         },
         modifierId: {
-            id: {
-                type: String
-            },
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_admins'
-            }
+            type: String,
+            default: ""
         },
         details: {
             type: String,
@@ -74,13 +77,8 @@ const SUBMISSION = new Schema({
             default: Date.now()
         },
         applicantId: {
-            id: {
-                type: String
-            },
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_identity'
-            }
+            type: String,
+            default: ""
         },
     },
 })

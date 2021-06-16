@@ -2,50 +2,48 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const CHILD_IDENTITY = new Schema({
-    id: String,
+    id: {
+        type: String,
+        default: ""
+    },
     name: {
-        firstName: String,
-        middleName: String,
-        lastName: String,
+        firstName: {
+            type: String,
+            default: ""
+        },
+        middleName: {
+            type: String,
+            default: ""
+        },
+        lastName: {
+            type: String,
+            default: ""
+        },
     },
     profileImage: String,
     applicantId: {
-        id: {
-            type: String
-        },
-        data: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_identity'
-        }
+        type: String,
+        default: ""
     },
     identityGroupId: {
-        id: {
-            type: String
-        },
-        data: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_identity_group'
-        }
+        type: String,
+        default: ""
     },
     deedOfBirthId: {
-        id: {
-            type: String
-        },
-        data: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_deedof_birth'
-        }
+        type: String,
+        default: ""
     },
-    childIdentityStatus: Number,
-    departmentApproverId:  String,
+    childIdentityStatus: {
+        type: Number,
+        default: 1
+    },
+    departmentApproverId:  {
+        type: String,
+        default: ""
+    },
     submissionId: {
-        id: {
-            type: String
-        },
-        data: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_submission_child_identity'
-        }
+        type: String,
+        default: ""
     },
     dateModified: [{
         date: {
@@ -53,13 +51,8 @@ const CHILD_IDENTITY = new Schema({
             default: Date.now()
         },
         modifierId: {
-            id: {
-                type: String
-            },
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_admins'
-            }
+            type: String,
+            default: ""
         },
         details: {
             type: String,

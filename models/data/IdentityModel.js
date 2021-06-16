@@ -2,15 +2,33 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const IDENTITY = new Schema({
-    id: String,
+    id: {
+        type: String,
+        default: ""
+    },
     name: {
-        firstName: String,
-        middleName: String,
-        lastName: String,
+        firstName: {
+            type: String,
+            default: ""
+        },
+        middleName: {
+            type: String,
+            default: ""
+        },
+        lastName: {
+            type: String,
+            default: ""
+        },
     },
     sex: Number,
-    nationality: String,
-    address: String,
+    nationality: {
+            type: String,
+            default: ""
+        },
+    address: {
+            type: String,
+            default: ""
+        },
     addressDetail: {
         addressProvince: Number,
         addressCity: Number,
@@ -20,88 +38,103 @@ const IDENTITY = new Schema({
         addressRW: Number,
         addressRT: Number,
     },
-    profileImage: String,
-    fingerPrint: String,
-    signature: String,
-    bloodType: String,
+    profileImage: {
+        type: String,
+        default: ""
+    },
+    fingerPrint: {
+        type: String,
+        default: ""
+    },
+    signature: {
+        type: String,
+        default: ""
+    },
+    bloodType: {
+        type: String,
+        default: ""
+    },
     maritalStatus: {
         type: Boolean,
         default: false
     },
-    profession: String,
+    profession: {
+        type: String,
+        default: ""
+    },
     contacts: {
-        phone: String,
-        mobile: String,
-        email: String
+        phone: {
+            type: String,
+            default: ""
+        },
+        mobile: {
+            type: String,
+            default: ""
+        },
+        email: {
+            type: String,
+            default: ""
+        },
     },
     linkedData: {
         deedOfBirthId: {
-            id: String,
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_deedofbirth'
-            }
+            type: String,
+            default: ""
         },
         childidentityId: {
-            id: String,
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_identity'
-            }
+            type: String,
+            default: ""
         },
         identityGroupId: {
-            id: String,
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_identity_group'
-            }
+            type: String,
+            default: ""
         },
-        driveLicenseId: [{
-            id: String,
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_drive_license'
+        driveLicenseId: [
+            {
+                id: {
+                    type: String,
+                    default: ""
+                },
             }
-        }],
-        passportId: [{
-            id: String,
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_passport'
+        ],
+        passportId: [
+            {
+                id: {
+                    type: String,
+                    default: ""
+                },
             }
-        }]
+        ]
     },
     identityStatus: Number,
     documents: [
-        String
+        {
+            id: {
+                type: String,
+                default: ""
+            },
+        }
     ],
     submissionId: {
-        id: {
-            type: String
-        },
-        data: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_submission_identity'
-        }
+        type: String,
+        default: ""
     },
     isActive: {
         type: Boolean,
         default: true
     },
-    departmentApproverId: String,
+    departmentApproverid: {
+        type: String,
+        default: ""
+    },
     dateModified: [{
         date: {
             type: Date, 
             default: Date.now()
         },
         modifierId: {
-            id: {
-                type: String
-            },
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_admins'
-            }
+            type: String,
+            default: ""
         },
         details: {
             type: String,

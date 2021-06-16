@@ -2,52 +2,76 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const IDENTITY_GROUP = new Schema({
-    id: String,
+    id: {
+        type: String,
+        default: ""
+    },
     headOfGroupId: {
-        id: {
-            type: String
-        },
-        data: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_identity'
-        }
+        type: String,
+        default: ""
     },
     members: [
         {
             name: {
-                firstName: String,
-                middleName: String,
-                lastName: String,
+                firstName: {
+                    type: String,
+                    default: ""
+                },
+                middleName: {
+                    type: String,
+                    default: ""
+                },
+                lastName: {
+                    type: String,
+                    default: ""
+                },
             },
             identityId: {
-                id: {
-                    type: String
-                },
-                data: {
-                    type: Schema.Types.ObjectId,
-                    ref: 'doc_identity'
-                }
+                type: String,
+                default: ""
             },
             sex: Number,
-            deedOfBirtId: String,
-            religion: String,
-            lastEducation: String,
-            profession: String,
-            bloodType: String,
-            maritalStatus: String,
-            memberStatus: String,
-            nationality: String,
+            deedOfBirtid: {
+                type: String,
+                default: ""
+            },
+            religion: {
+                type: String,
+                default: ""
+            },
+            lastEducation: {
+                type: String,
+                default: ""
+            },
+            profession: {
+                type: String,
+                default: ""
+            },
+            bloodType: {
+                type: String,
+                default: ""
+            },
+            maritalStatus: {
+                type: String,
+                default: ""
+            },
+            memberStatus: {
+                type: String,
+                default: ""
+            },
+            nationality: {
+                type: String,
+                default: ""
+            },
         }
     ],
-    departmentApproverId: String,
+    departmentApproverid: {
+        type: String,
+        default: ""
+    },
     submissionId: {
-        id: {
-            type: String
-        },
-        data: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_submission_identity_group'
-        }
+        type: String,
+        default: ""
     },
     dateModified: [{
         date: {
@@ -55,13 +79,8 @@ const IDENTITY_GROUP = new Schema({
             default: Date.now()
         },
         modifierId: {
-            id: {
-                type: String
-            },
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_admins'
-            }
+            type: String,
+            default: ""
         },
         details: {
             type: String,

@@ -3,19 +3,26 @@ const bcrypt = require('bcrypt-nodejs');
 const {Schema} = mongoose;
 
 const ADMIN = new Schema({
-    id: String,
-    identityId: {
-        id: {
-            type: String
-        },
-        data: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_identity'
-        }
+    id: {
+        type: String,
+        default: ""
     },
-    adminEmail: String,
-    adminUsername: String,
-    adminProfile: String,
+    identityId: {
+        type: Schema.Types.ObjectId,
+        ref: 'doc_identity'
+    },
+    adminEmail: {
+        type: String,
+        default: ""
+    },
+    adminUsername: {
+        type: String,
+        default: ""
+    },
+    adminProfile: {
+        type: String,
+        default: ""
+    },
     adminPassword: {
         type: String,
         set: generateHash
@@ -32,7 +39,10 @@ const ADMIN = new Schema({
         type: Number,
         default: 1
     },
-    adminDepartmentId: String,
+    adminDepartmentid: {
+        type: String,
+        default: ""
+    },
     options: {
         notifications: {
             isEmail: {
@@ -51,13 +61,8 @@ const ADMIN = new Schema({
             default: Date.now()
         },
         modifierId: {
-            id: {
-                type: String
-            },
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_admins'
-            }
+            type: String,
+            default: ""
         },
         details: {
             type: String,
@@ -70,13 +75,8 @@ const ADMIN = new Schema({
             default: Date.now()
         },
         creatorId: {
-            id: {
-                type: String
-            },
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_admins'
-            }
+            type: String,
+            default: ""
         }
     },
 })

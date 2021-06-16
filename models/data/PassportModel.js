@@ -2,29 +2,31 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const PASSPORT = new Schema({
-    id: String,
+    id: {
+        type: String,
+        default: ""
+    },
     identityId: {
-        id: {
-            type: String
-        },
-        data: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_identity'
-        }
+        type: String,
+        default: ""
     },
     passportType: Number,
     passportStatus: Number,
-    profileImage: String,
-    validUntil: Date,
-    departmentApproverId: String,
+    profileImage: {
+        type: String,
+        default: ""
+    },
+    validUntil: {
+        type: Date,
+        default: ""
+    },
+    departmentApproverid: {
+        type: String,
+        default: ""
+    },
     submissionId: {
-        id: {
-            type: String
-        },
-        data: {
-            type: Schema.Types.ObjectId,
-            ref: 'doc_submission_passport'
-        }
+        type: String,
+        default: ""
     },
     dateModified: [{
         date: {
@@ -32,13 +34,8 @@ const PASSPORT = new Schema({
             default: Date.now()
         },
         modifierId: {
-            id: {
-                type: String
-            },
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_admins'
-            }
+            type: String,
+            default: ""
         },
         details: {
             type: String,

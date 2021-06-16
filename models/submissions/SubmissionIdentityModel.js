@@ -2,19 +2,46 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const SUBMISSION = new Schema({
-    id: String,
-    departmentId: String,
+    id: {
+        type: String,
+        default: ""
+    },
+    departmentid: {
+        type: String,
+        default: ""
+    },
     profileData: {
         name: {
-            firstName: String,
-            middleName: String,
-            lastName: String,
+            firstName: {
+                    type: String,
+                    default: ""
+                },
+            middleName: {
+                    type: String,
+                    default: ""
+                },
+            lastName: {
+                    type: String,
+                    default: ""
+                },
         },
-        birthCountry: String,
-        birthCity: String,
-        birthDate: Date,
+        birthCountry: {
+            type: String,
+            default: ""
+        },
+        birthCity: {
+            type: String,
+            default: ""
+        },
+        birthDate: {
+            type: Date,
+            default: ""
+        },
         sex: Number,
-        address: String,
+        address: {
+            type: String,
+            default: ""
+        },
         addressDetail: {
             addressProvince: Number,
             addressCity: Number,
@@ -24,51 +51,73 @@ const SUBMISSION = new Schema({
             addressRW: Number,
             addressRT: Number,
         },
-        religion: String,
-        profession: String,
-        nationality: String,
+        religion: {
+            type: String,
+            default: ""
+        },
+        profession: {
+            type: String,
+            default: ""
+        },
+        nationality: {
+            type: String,
+            default: ""
+        },
     },
     submissionRequirements: {
-        coveringLetter: String,
+        coveringLetter: {
+            type: String,
+            default: ""
+        },
         identityGroupId: {
-            id: String,
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_identity_group'
-            }
+            type: String,
+            default: ""
         },
         deedOfBirthId: {
-            id: String,
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_deedofbirth'
-            }
+            type: String,
+            default: ""
         },
-        limitedStayPermitId: String,
-        imageProfile: String
+        limitedStayPermitid: {
+            type: String,
+            default: ""
+        },
+        imageProfile: {
+            type: String,
+            default: ""
+        },
     },
-    submissionProgress: Number,
+    submissionProgress: {
+        type: Number,
+        default: 0
+    },
     submissionProgressDetail: [
         {
-            progressName: String,
-            date: Date
+            progressName: {
+                type: String,
+                default: ""
+            },
+            date: {
+                type: Date,
+                default: ""
+            }
         },
     ],
-    submissionStatus: Number,
-    note: String,
+    submissionStatus: {
+        type: Number,
+        default: 1
+    },
+    note: {
+        type: String,
+        default: ""
+    },
     dateModified: [{
         date: {
             type: Date, 
             default: Date.now()
         },
         modifierId: {
-            id: {
-                type: String
-            },
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_admins'
-            }
+            type: String,
+            default: ""
         },
         details: {
             type: String,
@@ -81,13 +130,8 @@ const SUBMISSION = new Schema({
             default: Date.now()
         },
         applicantId: {
-            id: {
-                type: String
-            },
-            data: {
-                type: Schema.Types.ObjectId,
-                ref: 'doc_child_identity'
-            }
+            type: String,
+            default: ""
         },
     },
 })

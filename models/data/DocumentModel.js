@@ -2,8 +2,14 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const DOCUMENT = new Schema({
-    uploaderId: String,
-    submissionId: String,
+    uploaderid: {
+        type: String,
+        default: ""
+    },
+    submissionid: {
+        type: String,
+        default: ""
+    },
     fileName: String,
     ext: String,
     documentDescription: String,
