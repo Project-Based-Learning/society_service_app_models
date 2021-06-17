@@ -6,6 +6,10 @@ const SUBMISSION = new Schema({
         type: String,
         default: ""
     },
+    applicantId: {
+        type: String,
+        default: ""
+    },
     departmentId: {
         type: String,
         default: ""
@@ -79,7 +83,10 @@ const SUBMISSION = new Schema({
                 type: String,
                 default: ""
             },
-            document: String
+            document: {
+                type: String,
+                default: ""
+            },
         }
     },
     submissionProgress: {

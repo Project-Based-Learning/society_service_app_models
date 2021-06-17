@@ -31,7 +31,10 @@ const SUBMISSION = new Schema({
             },
             document: String
         },
-        marriageCertificate: String
+        marriageCertificate: {
+            type: String,
+            default: ""
+        },
     },
     submissionProgress: {
         type: Number,
