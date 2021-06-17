@@ -21,11 +21,8 @@ const SUBMISSION = new Schema({
             default: ""
         },
         identityGroupId: {
-            id: {
-                type: String,
-                default: ""
-            },
-            document: String
+            type: String,
+            default: ""
         },
         marriageCertificate: {
             type: String,
