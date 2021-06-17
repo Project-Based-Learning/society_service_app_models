@@ -29,7 +29,7 @@ const SUBMISSION = new Schema({
                     type: String,
                     default: ""
                 },
-                identityGroupid: {
+                identityGroupId: {
                     type: String,
                     default: ""
                 },
