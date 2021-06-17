@@ -27,6 +27,26 @@ const SUBMISSION = new Schema({
             type: String,
             default: ""
         },
+        members: [
+            {
+                identityId: {
+                    type: String,
+                    default: ""
+                },
+                identityGroupid: {
+                    type: String,
+                    default: ""
+                },
+                memberStatus: {
+                    type: Number,
+                    default: 1
+                },
+                lastEducation: {
+                    type: String,
+                    default: ""
+                },
+            }
+        ]
     },
     submissionProgress: {
         type: Number,
