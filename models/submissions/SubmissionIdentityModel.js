@@ -29,6 +29,10 @@ const SUBMISSION = new Schema({
             type: String,
             default: ""
         },
+        birthProvince: {
+            type: String,
+            default: ""
+        },
         birthCity: {
             type: String,
             default: ""

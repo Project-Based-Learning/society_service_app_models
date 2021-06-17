@@ -16,11 +16,26 @@ const DEPARTMENT = new Schema({
         type: String,
         default: ""
     },
-    departmentProvinceCode: Number,
-    departmentCityCode: Number,
-    departmentSubDistrictCode: Number,
-    departmentKelurahanCode: Number,
-    departmentVillageCode: Number,
+    departmentProvinceCode: {
+        type: String,
+        default: ""
+    },
+    departmentCityCode: {
+        type: String,
+        default: ""
+    },
+    departmentSubDistrictCode: {
+        type: String,
+        default: ""
+    },
+    departmentKelurahanCode: {
+        type: String,
+        default: ""
+    },
+    departmentVillageCode: {
+        type: String,
+        default: ""
+    },
     departmentIcon: {
         type: String,
         default: ""

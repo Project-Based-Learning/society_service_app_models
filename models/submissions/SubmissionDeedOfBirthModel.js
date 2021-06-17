@@ -29,9 +29,18 @@ const SUBMISSION = new Schema({
         type: Date,
         default: ""
     },
-    birthCountry: Number,
-    birthProvince: Number,
-    birthCity: Number,
+    birthCountry: {
+        type: String,
+        default: ""
+    },
+    birthProvince: {
+        type: String,
+        default: ""
+    },
+    birthCity: {
+        type: String,
+        default: ""
+    },
     sequenceOfChildren: Number,
     submissionRequirements: {
         birthCertificate: {
