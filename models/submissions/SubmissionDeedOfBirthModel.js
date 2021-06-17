@@ -6,10 +6,6 @@ const SUBMISSION = new Schema({
         type: String,
         default: ""
     },
-    applicantId: {
-        type: String,
-        default: ""
-    },
     departmentId: {
         type: String,
         default: ""
