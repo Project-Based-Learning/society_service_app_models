@@ -47,13 +47,34 @@ const SUBMISSION = new Schema({
             default: ""
         },
         addressDetail: {
-            addressProvince: Number,
-            addressCity: Number,
-            addressSubDistrict: Number,
-            addressKelurahan: Number,
-            addressVillage: Number,
-            addressRW: Number,
-            addressRT: Number,
+            addressProvince: {
+                type: String,
+                default: ""
+            },
+            addressCity: {
+                type: String,
+                default: ""
+            },
+            addressSubDistrict: {
+                type: String,
+                default: ""
+            },
+            addressKelurahan: {
+                type: String,
+                default: ""
+            },
+            addressVillage: {
+                type: String,
+                default: ""
+            },
+            addressRW: {
+                type: String,
+                default: ""
+            },
+            addressRT: {
+                type: String,
+                default: ""
+            },
         },
         religion: {
             type: String,
