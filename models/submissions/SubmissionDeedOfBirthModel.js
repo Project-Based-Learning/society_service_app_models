@@ -58,14 +58,10 @@ const SUBMISSION = new Schema({
             type: String,
             default: ""
         },
-        witnessIdentityId: [
-            {
-                id: {
-                    type: String,
-                    default: ""
-                }
-            }
-        ],
+        witnessIdentityId: {
+            type: String,
+            default: ""
+        },
         powerOfAttorney: {
             type: String,
             default: ""
