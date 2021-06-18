@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const IMAGE = new Schema({
-    uploaderid: {
+    uploaderId: {
         type: String,
         default: ""
     },
-    submissionid: {
+    submissionId: {
         type: String,
         default: ""
     },

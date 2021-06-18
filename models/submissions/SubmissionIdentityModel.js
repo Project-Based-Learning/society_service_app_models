@@ -102,7 +102,7 @@ const SUBMISSION = new Schema({
             type: String,
             default: ""
         },
-        limitedStayPermitid: {
+        limitedStayPermitId: {
             type: String,
             default: ""
         },

@@ -31,7 +31,7 @@ const IDENTITY_GROUP = new Schema({
                 default: ""
             },
             sex: Number,
-            deedOfBirtid: {
+            deedOfBirtId: {
                 type: String,
                 default: ""
             },

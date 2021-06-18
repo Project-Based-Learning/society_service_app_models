@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const DOCUMENT = new Schema({
-    uploaderid: {
+    uploaderId: {
         type: String,
         default: ""
     },
-    submissionid: {
+    submissionId: {
         type: String,
         default: ""
     },
