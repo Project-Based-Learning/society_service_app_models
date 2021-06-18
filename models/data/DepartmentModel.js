@@ -24,7 +24,7 @@ const DEPARTMENT = new Schema({
         type: String,
         default: ""
     },
-    departmentSubDistrictCode: {
+    departmentDistrictCode: {
         type: String,
         default: ""
     },

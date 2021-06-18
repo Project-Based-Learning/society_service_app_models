@@ -55,7 +55,7 @@ const SUBMISSION = new Schema({
                 type: String,
                 default: ""
             },
-            addressSubDistrict: {
+            addressDistrict: {
                 type: String,
                 default: ""
             },
