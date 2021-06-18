@@ -28,10 +28,6 @@ const DEPARTMENT = new Schema({
         type: String,
         default: ""
     },
-    departmentKelurahanCode: {
-        type: String,
-        default: ""
-    },
     departmentVillageCode: {
         type: String,
         default: ""
