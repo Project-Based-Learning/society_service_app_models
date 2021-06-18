@@ -59,10 +59,6 @@ const SUBMISSION = new Schema({
                 type: String,
                 default: ""
             },
-            addressKelurahan: {
-                type: String,
-                default: ""
-            },
             addressVillage: {
                 type: String,
                 default: ""
